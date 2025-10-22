@@ -144,7 +144,8 @@ named-checkzone 220.168.192.in-addr.arpa /var/named/220.168.192.rev
 
 #### Deberías ver:
 
- zone ocp.netlogic.com.py/IN: loaded serial 2025102201
- OK
- zone 220.168.192.in-addr.arpa/IN: loaded serial 2025102201
- OK
+```bash
+zone ocp.netlogic.com.py/IN: loaded serial 2025102201
+OK
+zone 220.168.192.in-addr.arpa/IN: loaded serial 2025102201
+OK
