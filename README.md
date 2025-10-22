@@ -149,3 +149,37 @@ zone ocp.netlogic.com.py/IN: loaded serial 2025102201
 OK
 zone 220.168.192.in-addr.arpa/IN: loaded serial 2025102201
 OK
+```
+
+#### 10. Reiniciar servicio
+```powershell
+systemctl restart named
+systemctl enable named
+systemctl status named
+```
+
+
+#### Probar resolución
+```powershell
+dig @127.0.0.1 api.ocp.netlogic.com.py
+dig @127.0.0.1 -x 192.168.220.10
+```
+
+
+#### Salida esperada:
+```powershell
+;; ANSWER SECTION:
+api.ocp.netlogic.com.py. 86400 IN A 192.168.220.10
+```
+
+
+#### Configurar los clientes (VMs OKD)
+```powershell
+cat <<EOF > /etc/resolv.conf
+search ocp.netlogic.com.py
+nameserver 192.168.220.5
+EOF
+```
+
+
+
